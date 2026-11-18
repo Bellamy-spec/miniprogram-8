@@ -12,7 +12,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    wx.request({
+      url: 'https://news-at.zhihu.com/api/4/news/latest',   // 知乎日报最新话题
+      header: {
+        'content-type': 'application/json',   // 默认值
+      },
+      success: res => {
+        console.log('网络请求成功之后获取到的数据', res)
+      }
+    })
   },
 
   /**
