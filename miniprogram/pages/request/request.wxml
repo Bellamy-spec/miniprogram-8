@@ -1,2 +1,4 @@
 <!--pages/request/request.wxml-->
 <text>pages/request/request.wxml</text>
+<button bind:tap="axiosTest">云函数获取网络数据</button>
+<button bind:tap="getOpenID">云函数获取OpenID</button>

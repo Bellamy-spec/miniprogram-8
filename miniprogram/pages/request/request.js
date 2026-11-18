@@ -70,5 +70,24 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  axiosTest(){
+    wx.cloud.callFunction({
+      name: "axios",
+    }).then(res => {
+      console.log('云函数获取到的网络数据', res.result)
+    })
+  },
+
+  getOpenID(){
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      data: {
+        type: 'getOpenId',
+      },
+    }).then(res => {
+      console.log('云函数获取到的OpenID', res.result)
+    })
+  },
 })
