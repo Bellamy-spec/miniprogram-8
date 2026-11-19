@@ -5,10 +5,12 @@
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="#ffffff" 
     indicator-active-color="#2971f6" style="height: 400px;">
       <block wx:for="{{ top_stories }}" wx:key="*this">
-        <swiper-item>
-          <view class="weui-media-box__title">{{ item.title }}</view>
-          <image src="{{ item.image }}" style="width: 100%;" class="slide-image" mode="widthFix"></image>
-        </swiper-item>
+        <navigator url="/pages/story/story?id={{ item.id }}">
+          <swiper-item>
+            <view class="weui-media-box__title">{{ item.title }}</view>
+            <image src="{{ item.image }}" style="width: 100%;" class="slide-image" mode="widthFix"></image>
+          </swiper-item>
+        </navigator>
       </block>
     </swiper>
   </view>
@@ -16,7 +18,7 @@
 <view class="page__bd">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd" wx:for="{{ stories }}" wx:for-item="story" wx:key="*item">
-      <navigator url="" class="weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="/pages/story/story?id={{ story.id }}" class="weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" mode="widthFix" src="{{ story.images[0] }}" 
           style="height: auto;"></image>

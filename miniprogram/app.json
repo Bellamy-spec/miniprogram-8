@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/story/story",
     "pages/request/request",
+    "pages/story/story",
     "pages/index/index",
     "pages/example/index"
   ],

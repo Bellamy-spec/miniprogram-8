@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let story_id = '9794082'
+    let story_id = options.id
     let that = this
     wx.request({
       url: 'https://news-at.zhihu.com/api/4/news/' + story_id,
