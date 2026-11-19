@@ -5,13 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    date: '',
+    stories: [],
+    top_stories: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    let that = this
     wx.request({
       url: 'https://news-at.zhihu.com/api/4/news/latest',   // 知乎日报最新话题
       header: {
@@ -19,6 +22,12 @@ Page({
       },
       success: res => {
         console.log('网络请求成功之后获取到的数据', res)
+        let date = res.data.date
+        let stories = res.data.stories
+        let top_stories = res.data.top_stories
+        that.setData({
+          date, stories, top_stories
+        })
       }
     })
   },
