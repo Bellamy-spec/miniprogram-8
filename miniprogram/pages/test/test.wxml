@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<!-- <rich-text nodes="{{ html }}"> -->
+<mp-html content="{{ html }}" selectable preview-img lazy-load></mp-html>

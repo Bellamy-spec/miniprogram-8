@@ -5,7 +5,7 @@ cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const url = 'https://news-at.zhihu.com/api/4/news/latest'
+  const url = event.url
   try{
     const res = await axios({
       url: url,

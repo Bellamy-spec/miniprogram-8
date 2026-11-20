@@ -84,6 +84,9 @@ Page({
   axiosTest(){
     wx.cloud.callFunction({
       name: "axios",
+      data: {
+        url: 'https://news-at.zhihu.com/api/4/news/latest',
+      },
     }).then(res => {
       console.log('云函数获取到的网络数据', res.result)
     })
