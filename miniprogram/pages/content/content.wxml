@@ -1,0 +1,24 @@
+<!--pages/content/content.wxml-->
+<text>pages/content/content.wxml</text>
+<view class="page__bd">
+  <view class="weui-article">
+    <view class="weui-article__h1">{{ contentData.title }}</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <image class="weui-article__img" src="{{ contentData.image }}" mode="widthFix" style="width: 100%;"></image>
+        </view>
+        <view class="weui-article__p">
+          <rich-text nodes="{{ contentData.content }}"></rich-text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{ favority }}">
+      <button bind:tap="addFavor">取消收藏这篇文章</button>
+    </view>
+    <view wx:else>
+      <button bind:tap="addFavor">收藏这篇文章</button>
+    </view>
+    <view>已收藏{{ favorites }}次</view>
+  </view>
+</view>

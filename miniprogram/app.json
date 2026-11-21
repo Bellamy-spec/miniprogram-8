@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/blog/blog",
+    "pages/content/content",
     "pages/request/request",
     "pages/story/story",
     "pages/test/test",

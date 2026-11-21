@@ -1,0 +1,17 @@
+<!--pages/blog/blog.wxml-->
+<text>pages/blog/blog.wxml</text>
+<block wx:for="{{ blogData }}" wx:for-index="idx" wx:for-item="blog" wx:key="item">
+  <view class="weui-panel__bd">
+    <navigator url="./../content/content?id={{ blog._id }}" class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd">
+        <image class="weui-media-box__thumb" src="{{ blog.image }}" alt></image>
+      </view>
+      <view class="weui-media-box__bd">
+        <h4 class="weui-media-box__title">{{ blog.title }}</h4>
+        <view class="weui-media-box__desc">{{ blog.category[0].name }}    阅读量：{{ blog.views }}</view>
+      </view>
+    </navigator>
+  </view>
+  <view wx:if="{{ blog.star }}" bind:tap="addStar" data-id="{{ blog._id }}">取消点赞：{{ blog.stars }}</view>
+  <view wx:else bind:tap="addStar" data-id="{{ blog._id }}">点赞：{{ blog.stars }}</view>
+</block>
